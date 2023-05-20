@@ -1,8 +1,13 @@
 puts '***** JUEGO DE PIEDRA, PAPEL o TIJERA *****'
 puts 'elige, piedra (1), papel(2) o tijera(3)'
-humano = gets.chomp.to_i
+if ARGV.empty?
+  humano = gets.chomp.to_i
+else
+  humano = ARGV[0].to_i
+end
+
 maquina = rand(1..3)
-if humano >=1 && humano <= 3
+if humano >= 1 && humano <= 3
   if maquina == 1
     if humano == 1
       puts 'Has Empatado, la maquina ha elegido piedra'
