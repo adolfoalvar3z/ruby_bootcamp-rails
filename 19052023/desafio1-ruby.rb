@@ -1,4 +1,4 @@
-piedra,papel,tijera = 1,2,3
+puts '***** JUEGO DE PIEDRA, PAPEL o TIJERA *****'
 puts 'elige, piedra (1), papel(2) o tijera(3)'
 humano = gets.chomp.to_i
 maquina = rand(1..3)
