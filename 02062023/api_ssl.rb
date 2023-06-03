@@ -13,6 +13,17 @@ def request(url_requested)
   response = http.request(request)
   return JSON.parse(response.body)
 end
-puts data = request("https://jsonplaceholder.typicode.com/photos/1")
+puts data = request("https://jsonplaceholder.typicode.com/photos/")[0..50]
 
-puts data["thumbnailUrl"]
+#puts data["thumbnailUrl"]
+
+#puts data#imprimiendo el arreglo con los hash como elementos
+puts
+html=""
+data.each do |elemento|
+    puts elemento["thumbnailUrl"]
+    puts
+    html << "<img src='#{elemento["thumbnailUrl"]}' alt=''>"
+end
+
+File.write("pagina.html", html)
