@@ -54,6 +54,15 @@ html << "
 File.write("index.html", html)
 end
 
+def photos_count(data)
+  i = 0
+  data.each do |elemento|
+    i += 1
+  end
+  puts "Tenemos #{i} Digimon Registrados"
+end
+
 #invocación de métodos
 data = request("https://digimon-api.vercel.app/api/digimon")
 buid_web_page(data)
+photos_count(data)
