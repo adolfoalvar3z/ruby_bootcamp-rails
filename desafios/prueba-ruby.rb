@@ -3,6 +3,12 @@ class Person
     @first_name = first
     @last_name = last
   end
+  def talk
+    puts "Bienvenidos a todos Personas!"
+  end
+  def introduce
+    puts "Soy una Persona, Mi nombre es #{@first_name} #{@last_name}."
+  end
 end
 
 class Teacher < Person
@@ -46,3 +52,7 @@ calixto.introduce
 adolfo = Student.new("Adolfo", "Álvarez")
 adolfo.talk
 adolfo.introduce
+
+paula = Person.new("Paula", "Rebolledo")
+paula.talk
+paula.introduce
